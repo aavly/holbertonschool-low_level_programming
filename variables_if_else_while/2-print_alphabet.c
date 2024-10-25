@@ -9,11 +9,11 @@
 
 int main(void)
 {
-	int a = 65;
+	int a = 97;
 
-	while (a < 91)
+	while (a < 122)
 	{
-		putchar(tolower(a));
+		putchar(a);
 		a++;
 	}
 	return (0);
