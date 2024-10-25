@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * main - use putchar to print alphabet in lowercase
@@ -9,12 +8,11 @@
 
 int main(void)
 {
-	int a = 97;
+	char c;
 
-	while (a < 122)
-	{
-		putchar(a);
-		a++;
-	}
+	for (c = 'a'; c <= 'z'; c++)
+		putchar(c);
+
+	putchar('\n');
 	return (0);
 }
