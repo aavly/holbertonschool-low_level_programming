@@ -11,8 +11,10 @@ int main(void)
 {
 	int a = 65;
 
-	while (a < 91) {
+	while (a < 91)
+	{
 		putchar(tolower(a));
+		a++;
 	}
 	return (0);
 }
