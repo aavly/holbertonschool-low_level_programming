@@ -7,16 +7,13 @@
 
 void print_alphabet_x10(void)
 {
-	int counter = 1;
-	int ascii = 97;
+	int counter = 0;
+	int ascii;
 
-	while (counter < 11)
+	while (counter < 10)
 	{
-		while (ascii < 123)
-		{
+		for (ascii = 97; ascii <123; ascii++)
 			_putchar(ascii);
-			ascii++;
-		}
 		_putchar('\n');
 		counter++;
 	}
