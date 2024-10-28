@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * more_numbers - prints 10- times 0-14,
+ * more_numbers - prints 10 times 0-14,
  *			followed by a new line.
  */
 
@@ -9,17 +9,22 @@ void more_numbers(void)
 {
 	int counter = 48, i;
 
-	while (counter <= 57)
+	for (i = 0; i < 9; i++)
 	{
-		_putchar(counter);
-
-		counter++;
+		for (i = 0; i < 14; i++)
+		{
+			if (i < 10)
+			{
+				_putchar(counter);
+				counter++;
+			}
+			else
+			{
+				_putchar('1');
+				_putchar(counter);
+				counter++;
+			}
+			_putchar('\n');
+		}
 	}
-	counter = 48;
-
-	for (i = 0; i < 5; i++)
-	{
-		_putchar('1' + counter);
-	}
-	_putchar('\n');
 }
