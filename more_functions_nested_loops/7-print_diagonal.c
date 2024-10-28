@@ -11,15 +11,15 @@ void print_diagonal(int n)
 {
 	int counter = 0, i;
 
-	while (counter < n)
-	{
-		_putchar(92);
-		_putchar('\n');
-		counter ++;
-
-		for (i = 0; i < counter; i++)
-			_putchar(' ');
-	}
 	if (n <= 0)
 		_putchar('\n');
+
+	while (counter < n)
+	{
+		for (i = 0; i < counter; i++)
+			_putchar(' ');
+		_putchar(92);
+		_putchar('\n');
+		counter++;
+	}
 }
