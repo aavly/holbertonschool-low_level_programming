@@ -31,6 +31,6 @@ int main(void)
 	if (num > 2)
 		biggest = num;
 
-	printf("%ld", biggest);
+	printf("%ld\n", biggest);
 	return (0);
 }
