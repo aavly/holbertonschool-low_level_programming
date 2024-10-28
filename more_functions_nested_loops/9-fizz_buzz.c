@@ -36,7 +36,7 @@ int main(void)
 		if (hunnid != 100)
 			printf(" ");
 	}
-	printf ("\n");
+	printf("\n");
 
 	return (0);
 }
