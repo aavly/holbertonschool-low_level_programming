@@ -33,7 +33,8 @@ int main(void)
 		else
 			printf("%d", hunnid);
 
-		printf(" ");
+		if (hunnid != 100)
+			printf(" ");
 	}
 
 	return (0);
