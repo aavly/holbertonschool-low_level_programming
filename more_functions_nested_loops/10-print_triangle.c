@@ -10,23 +10,22 @@
 
 void print_triangle(int size)
 {
-	int y, x, placement, hash;
+	int y, x;
+
+	if (size <= 0)
+		_putchar('\n');
 
 	for (y = 0; y < size; y++)
 	{
-		placement = 10 - y;
-
-		for (x = 0; x < placement; x++)
+		for (x = 0; x < size - y - 1; x++)
 		{
 			_putchar(' ');
 		}
 
-		hash = 10 - placement;
-
-		for (x = 0; x < hash; x++)
+		for (x = 0; x < y + 1; x++)
 		{
 			_putchar('#');
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
