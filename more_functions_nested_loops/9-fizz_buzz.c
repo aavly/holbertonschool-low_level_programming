@@ -32,6 +32,8 @@ int main(void)
 		}
 		else
 			printf("%d", hunnid);
+
+		printf(" ");
 	}
 
 	return (0);
