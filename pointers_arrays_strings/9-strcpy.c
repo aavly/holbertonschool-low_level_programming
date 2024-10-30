@@ -5,6 +5,9 @@
  *		including the terminating null byte '\0'
  *		to the buffer pointed set to by dest.
  *
+ * @dest: char pointer to be returned.
+ * @src: char pointer to be copied.
+ *
  * Return: the pointer to dest.
  */
 
