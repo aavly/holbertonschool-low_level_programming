@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcmp - compares two strings.
+ * _strcmp - compares two strings (in ASCII values)
  * @s1: first string to be compared.
  * @s2: second string to be compared.
  *
@@ -15,24 +15,14 @@ int _strcmp(char *s1, char *s2)
 {
 	int one = 0;
 	int two = 0;
-	int diff;
+	int counter = 0;
+	char asciiA, asciiB;
 
 	while (s1[one] != '\0')
 		one++;
 
 	while (s2[two] != '\0')
 		two++;
-
-	if (one == two)
-		diff = 0;
-	else if (one < two)
-	{
-		diff = (-1 * (two - one));
-	}
-	else if (one > two)
-	{
-		diff = (-1 * (one - two));
-	}
 
 	return (diff);
 }
