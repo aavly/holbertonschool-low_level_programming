@@ -16,6 +16,7 @@ int _strcmp(char *s1, char *s2)
 	int one = 0;
 	int two = 0;
 	int counter = 0;
+	int diff = 0;
 	char asciiA, asciiB;
 
 	while (s1[one] != '\0')
@@ -24,5 +25,18 @@ int _strcmp(char *s1, char *s2)
 	while (s2[two] != '\0')
 		two++;
 
+	if (two > one)
+		diff = s2[two];
+	else
+	{
+
+		while (s1[counter] < '\0')
+		{
+			s1[counter] = asciiA;
+			s2[counter] = asciiB;
+
+			diff = asciiA - asciiB;
+		}
+	}
 	return (diff);
 }
