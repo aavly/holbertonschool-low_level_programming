@@ -13,30 +13,12 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int one = 0;
-	int two = 0;
-	int counter = 0;
-	int diff = 0;
-	char asciiA, asciiB;
-
-	while (s1[one] != '\0')
-		one++;
-
-	while (s2[two] != '\0')
-		two++;
-
-	if (two > one)
-		diff = s2[two];
-	else
+	while (*s1 != '\0' || *s2 != '\0')
 	{
-
-		while (s1[counter] < '\0')
-		{
-			s1[counter] = asciiA;
-			s2[counter] = asciiB;
-
-			diff = asciiA - asciiB;
-		}
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1 = s1 + 1;
+		s2 = s2 + 1;
 	}
-	return (diff);
+	return (0);
 }
