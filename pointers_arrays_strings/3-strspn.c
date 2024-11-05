@@ -14,15 +14,28 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
-	int i = 0;
+	int match_found;
+	char *a = accept;
 
-	while (*s != '\0')
+	while (*s)
 	{
-		if (s[i] == accept[i])
+		match_found = 0;
+
+		while (*a)
 		{
-			count++;
+			if (*s == *a)
+			{
+				match_found = 1;
+				break;
+			}
+			a++;
 		}
-		i++;
+
+	if (!match_found)
+		break;
+
+	count++;
+	s++;
 	}
 
 	return (count);
