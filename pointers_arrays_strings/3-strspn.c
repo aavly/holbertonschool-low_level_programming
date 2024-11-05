@@ -20,6 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 	while (*s)
 	{
 		match_found = 0;
+		a = accept;
 
 		while (*a)
 		{
