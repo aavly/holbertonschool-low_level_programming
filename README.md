@@ -1,1 +1,1 @@
-HOLBERTON PROJECTS: SPRINT 1
+Holberton Sprint 1
