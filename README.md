@@ -1,1 +1,1 @@
-Holberton Week 3: C basics
+HOLBERTON PROJECTS: SPRINT 1
