@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_diagsums - prints sum of the two
@@ -13,27 +14,23 @@
 
 void print_diagsums(int *a, int size)
 {
-	int row, column;
-	int sum1 = 0, sum2 = 0;
+	int i = 0;
+	int sum = 0;
+	int row = 0;
 
-	while (*a)
+	while (i < size)
 	{
-		for (row = 0; row < size; row++)
-		{
-			for (column = 0; column < size; column++)
-			{
-				if (row == column)
-				{
-					sum1 += a[(row * column) + size];
-				}
-				if (row + column == 4)
-				{
-					sum2 += a[(row * column) + size];
-				}
-
-				row++;
-				column++;
-			}
-		}
+		sum += a[(row * size) + i];
+		row++;
+		i++;
 	}
+	printf("%d, ", sum);
+	sum = 0;
+	while (i > 0)
+	{
+		sum += a[(row * size) - (i)];
+				row--;
+				i--;
+	}
+	printf("%d\n", sum);
 }
