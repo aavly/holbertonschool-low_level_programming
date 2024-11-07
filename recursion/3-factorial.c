@@ -14,7 +14,11 @@ int factorial(int n)
 
 	if (n < 0)
 	{
-		return (-1);
+		fact = -1;
+	}
+	else if (n == 0 && n ==1)
+	{
+		fact = 1;
 	}
 	else
 	{
