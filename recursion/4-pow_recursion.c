@@ -12,12 +12,12 @@
 
 int _pow_recursion(int x, int y)
 {
-	int power = 1;
+	int power;
 
 	if (y < 0)
 		return (-1);
 
-	power *= _pow_recursion(x, y - 1);
+	power = x * _pow_recursion(x, y - 1);
 
 	return (power);
 }
