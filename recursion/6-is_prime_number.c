@@ -2,22 +2,21 @@
 
 /**
  * helper - helper function to recursively find prime.
- * @mid: halfway point of n.
- * @i: incrementor up to mid.
+ * @n: number determined if prime.
+ * @i: incrementor up to n/2.
  *
  * Return: (1) if prime, (0) otherwise.
  */
 
-int helper(int mid, int i)
+int helper(int n, int i)
 {
-	int calcPrime;
+	if (i * i > n)
+		return (1);
 
-	if (mid / i % 0)
+	if (n % i == 0)
 		return (0);
 
-	calcPrime = mid / helper(i + 1);
-
-	return (1);
+	return (helper(n, (i + 1)));
 }
 
 /**
@@ -29,8 +28,8 @@ int helper(int mid, int i)
 
 int is_prime_number(int n)
 {
-	if (n % 2 == 0)
+	if (n <= 1)
 		return (0);
 
-	return (helper((n + 1) / 2), 1);
+	return (helper(n, 2));
 }
