@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -15,16 +14,26 @@
 
 char *_strdup(char *str)
 {
-	char *duplicate = str;
+	char *duplicate;
+	int strlength = 0, i;
 
 	if (str == NULL)
 		return (NULL);
 
-	/* allocating mem for new string (+1 for null terminator) */
-	duplicate = malloc(strlen(str) + 1);
+	/* calc str length for mem allocation */
+	while (*str != '\0')
+	{
+		strlength++;
+		str++;
+	}
 
-	/* copy string into the newly allocated space */
-	strcpy(duplicate, str);
+	/* allocating mem for string */
+	duplicate = malloc(strlength);
+
+	for (i = 0; i < strlength + 1; i++)
+	{
+		duplicate[i] = str[i];
+	}
 
 	return (duplicate);
 }
