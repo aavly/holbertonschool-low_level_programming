@@ -24,5 +24,5 @@ void free_grid(int **grid, int height)
 		free(grid[i]);
 
 	/* freeing grid arrat itself */
-	free(grid);   
+	free(grid); 
 }
