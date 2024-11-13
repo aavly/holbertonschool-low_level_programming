@@ -26,14 +26,14 @@ char *_strdup(char *str)
 
 	/* allocating mem for string (including null terminator) */
 	duplicate = malloc(strlength + 1);
+	if (duplicate == NULL)
+		return (NULL);
 
 	for (i = 0; i < strlength; i++)
 		duplicate[i] = str[i];
 
 	/* null-terminate the duplicate string */
 	duplicate[strlength] = '\0';
-
-	free(duplicate);
 
 	return (duplicate);
 }
