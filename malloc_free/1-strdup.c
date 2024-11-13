@@ -22,18 +22,18 @@ char *_strdup(char *str)
 
 	/* calc str length for mem allocation */
 	while (*str != '\0')
-	{
 		strlength++;
-		str++;
-	}
 
-	/* allocating mem for string */
-	duplicate = malloc(strlength);
+	/* allocating mem for string (including null terminator) */
+	duplicate = malloc(strlength + 1);
 
-	for (i = 0; i < strlength + 1; i++)
-	{
+	for (i = 0; i < strlength; i++)
 		duplicate[i] = str[i];
-	}
+
+	/* null-terminate the duplicate string */
+	duplicate[strlength] = '\0';
+
+	free(duplicate);
 
 	return (duplicate);
 }
