@@ -31,12 +31,10 @@ int **alloc_grid(int width, int height)
 	/* allocate memory for each row + initialise elements to 0 */
 	for (i = 0; i < height; i++)
 	{
-		grid[i]
-	}
-
-	for (i = 0; i < width; i++)
-	{
-		for (j = 0; i < height; j++)
+		grid[i] = malloc(width * sizeof(int));
+		
+		/* initializing each element in row to 0 */
+		for (j = 0; j < width; j++)
 			grid[i][j] = 0;
 	}
 
