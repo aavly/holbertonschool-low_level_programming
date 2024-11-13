@@ -17,39 +17,38 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	int length = 0, i = 0, j = 0;
+	int length1 = 0, length2 = 0, i = 0, j = 0;
 	char *concat;
 
-	/* calc length of each string and adding it to length */
-	while (*s1 != '\0')
-		length++;
+	/* treat NULL string as empty strings */
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	while (*s2 != '\0')
-		length++;
+	/* calc length of each string and adding it to length */
+	while (s1[length1] != '\0')
+		length1++;
+
+	while (s2[length2] != '\0')
+		length2++;
 
 	/* allocating space using length +1 for null term. */
-	concat = malloc(length + 1);
+	concat = malloc(length1 + length2 + 1);
 	/* returning NULL if there is an error with malloc */
 	if (concat == NULL)
 		return (NULL);
 
 	/* initializing concat with s1 first */
-	while (*s1 != '\0')
-	{
+	for (i = 0; i < length1; i++)
 		concat[i] = s1[i];
-		i++;
-	}
 
 	/* concatening s2 content from where we left off */
-	while (*s2 != '\0')
-	{
-		concat[i] = s2[j];
-		i++;
-		j++;
-	}
+	for (j = 0; j < length2; j++)
+		concat[i + j] = s2[j];
 
 	/* adding null terminator */
-	concat[i] = '\0';
+	concat[i + j] = '\0';
 
 	return (concat);
 }
