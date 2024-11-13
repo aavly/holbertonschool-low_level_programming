@@ -21,7 +21,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* calc str length for mem allocation */
-	while (*str != '\0')
+	while (str[strlength] != '\0')
 		strlength++;
 
 	/* allocating mem for string (including null terminator) */
