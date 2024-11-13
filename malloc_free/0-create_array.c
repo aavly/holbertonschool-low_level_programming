@@ -9,14 +9,14 @@
  * @c: character to initialize array.
  *
  * Return: a pointer to the array,
- *	or NULL if ut fails.
+ *	or NULL if it fails.
  */
 
 char *create_array(unsigned int size, char c)
 {
 	if (size != 0)
 	{
-		char *array = (char *) malloc(size * sizeof(c));
+		char *array = (char *)malloc(size * sizeof(c));
 
 		return (array);
 	}
