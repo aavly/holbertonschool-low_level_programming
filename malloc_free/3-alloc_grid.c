@@ -17,21 +17,22 @@
 
 int **alloc_grid(int width, int height)
 {
-	int grid[width][height], i, j;
-	int *ptr;
+	int **grid, i, j;
 
-	ptr = &grid;
-
-	if (width < 0 || height < 0)
+	/* checking for correct values */
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	/* allocating size */
-	grid = malloc((width * height) * sizeof(int));
+	/* allocating size for row pointers */
+	grid = malloc(height) * sizeof(int *));
 	if (grid == NULL)
 		return (NULL);
 
-	for (i = 0; i < width * height; i++)
-		grid[i] = 0;
+	/* allocate memory for each row + initialise elements to 0 */
+	for (i = 0; i < height; i++)
+	{
+		grid[i]
+	}
 
 	for (i = 0; i < width; i++)
 	{
