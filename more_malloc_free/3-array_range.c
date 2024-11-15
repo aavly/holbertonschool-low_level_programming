@@ -2,15 +2,36 @@
 #include <stdlib.h>
 
 /**
- * _calloc - allocates memory for an array, using malloc
- * @nmemb: no. of elements for array.
- * @size: byte size of each element.
+ * array_range - creates array of ints.
  *
- * Return: pointer to allocated memory.
- *	NULL if nmemb/size = 0 or malloc fails.
+ * @min: numbers from
+ * @max: numbers to
+ *
+ * Return: pointer to newly created array.
+ *	NULL if min > max, if malloc fails.
  */
 
-void *_calloc(unsigned int nmemb, unsigned int size)
+int *array_range(int min, int max)
 {
+	int *array;
+	int i, size;
 
+	/* checker */
+	if (min > max)
+		return (NULL);
+
+	/* determining allocated space needed */
+	size = max - min + 1;
+
+	array = malloc(size * sizeof(int));
+	if (array == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+	{
+		array[i] = min;
+		min++;
+	}
+
+	return (array);
 }
