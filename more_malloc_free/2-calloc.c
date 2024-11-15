@@ -1,34 +1,33 @@
 #include "main.h"
+#include <string.h>
 #include <stdlib.h>
 
 /**
- * malloc_checked - allocates memory using malloc.
- * 
- * @b: amount of bytes to allocate.
+ * _calloc - allocates memory for an array, using malloc.
  *
- * Return: pointer to the allocated memory.
- *	if malloc fails, function should cause 
- *	normal process termination with a status
- *	value of 98.
+ * @nmemb: no. of elements for array.
+ * @size: byte size of each element.
+ *
+ * Return: pointer to allocated memory.
+ *	NULL if nmemb/size = 0 or malloc fails.
  */
 
-void *malloc_checked(unsigned int b)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-}
-#include "main.h"
-#include <stdlib.h>
+	void *array;
 
-/**
- * malloc_checked - allocates memory using malloc.
- *
- * @b: amount of bytes to allocate.
- *
- * Return: pointer to the allocated memory.
- *	if malloc fails, function should cause
- *	normal process termination with a status
- *	value of 98.
- */
+	/* checkersssss*/
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 
-void *malloc_checked(unsigned int b)
-{
+	/* allocating mem space based on parameters */
+	array = malloc(nmemb * size);
+	/* fail safe */
+	if (array == NULL)
+		return (NULL);
+
+	/* setting values to 0 */
+	memset(array, 0, nmemb * size);
+
+	return (array);
 }
