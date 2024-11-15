@@ -19,9 +19,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int i, nameLength = 0, ownerLength = 0;
 
 	/* calc length for strings */
-	while(name[nameLength])
+	while (name[nameLength])
 		nameLength++;
-	while(owner[ownerLength])
+	while (owner[ownerLength])
 		ownerLength++;
 
 	/* allocating mem for new dog */
