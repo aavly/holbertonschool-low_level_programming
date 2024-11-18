@@ -1,5 +1,6 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include <stddef.h>
+#ifndef FUNCTION_POINTERS_H
+#define FUNCTION_POINTERS_H
 
 /**
  * Description: Header file containing declarations
