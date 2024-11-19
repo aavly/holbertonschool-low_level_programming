@@ -28,7 +28,7 @@ int (*get_op_func(char *s))(int, int)
 	while (operators[i].op != NULL)
 	{
 		if (operators[i].op[0] == s[0] &&
-		s[1] == '0')
+		s[1] == '\0')
 			return (operators[i].f);
 		i++;
 	}
