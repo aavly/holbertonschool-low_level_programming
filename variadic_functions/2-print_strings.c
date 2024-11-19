@@ -4,7 +4,7 @@
 
 /**
  * print_strings - prints strings, followed by \n
- * @seperator: string to be printed between strings
+ * @separator: string to be printed between strings
  * @n: number of strings passed to function
  *
  *	- if @separator NULL, do not print.
@@ -36,7 +36,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 		i++;
 	}
-	 
+
 	printf("\n");
 	va_end(strings);
 }
