@@ -1,4 +1,6 @@
 #include "function_pointers.h"
+#include "3-calc.h"
+#include <stddef.h>
 
 /**
  * get_op_func - selects correct function to perform
@@ -12,6 +14,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
+	/* array of op_t structs */
 	op_t operators[] =
 	{
 		{"+", op_add},
@@ -21,11 +24,15 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
+	
+	/* Base case -> return null if no match */
+	if (ops[0].op == NULL)
+		return (NULL);
 
-	while (ops[i].op != NULL)
-	{
-		if (*s == operators[i])
+	/* matching operator with current stage */
+	if (ops[0].op[0] == s[0] && s[1] == '\0')
+		return (ops[0].f);
 
-	}
+	/* Recursice call with next element in array */
+	return (get_op_func(s + sizeof(op_t)));
 }
