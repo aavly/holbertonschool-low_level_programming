@@ -13,7 +13,7 @@
 
 int (*get_op_func(char *s))(int, int)
 {
-	static op_t operators[] =
+	 op_t operators[] =
 	{
 		{"+", op_add},
 		{"-", op_sub},
