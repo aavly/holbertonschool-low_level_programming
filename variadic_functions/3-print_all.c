@@ -41,7 +41,8 @@ void print_all(const char * const format, ...)
 				case ('s'):
 					strrr = va_arg(toPrint, char *);
 					if (!strrr)
-						printf("(nil)");
+						strrr = "(nil)";
+					printf("%s", strrr);
 					break;
 			}
 			separator = ", ";
