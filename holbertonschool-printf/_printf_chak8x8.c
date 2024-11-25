@@ -30,13 +30,13 @@ int _printf(const char *format, ...)
 			s = (char)va_arg(args, char*);
 			if (s == NULL)
 			{
-			s = "(null)";
+				s = "(null)";
 			}
 			while(*s != '\0')
 			{
-			write(1, s, 1);
-			s++;
-			count++;
+				write(1, s, 1);
+				s++;
+				count++;
 			}
 		       break;
 
