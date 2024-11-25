@@ -6,5 +6,6 @@
  *		for all functions used in this directory
  */
 
+int _printf(const char *format, ...);
 
 #endif
