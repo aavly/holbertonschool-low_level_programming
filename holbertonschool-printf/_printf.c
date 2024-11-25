@@ -9,5 +9,13 @@
 
 int _printf(const char *format, ...)
 {
+	int count; /* no. of characters to be return */
+	int loop_count; /* counter for while loop */
+	int length; /* length of string char *s */ 
+
+	va_list printList; /* declaring va variable printList*/
+	va_start(printList, format); /* intializing printList with last fixed argument being format */
+
+
 
 }
