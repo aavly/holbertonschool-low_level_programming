@@ -14,18 +14,21 @@ int _strlen(char *s);
 int _printf(const char *format, ...)
 {
 	int count; /* no. of characters to be return */
-	int loop_count; /* counter for while loop */
-	int length; /* length of string char *s */
+	/* int loop_count;  counter for while loop */
+	/*int length; length of string char *s */
 	char *s;
-	int i = 0; /*counter for *format */
+	int i;
+	va_list printList;
 
-	va_list printList; /* declaring va variable printList*/
+	i = 0; /*counter for *format */
+	count = 0; /* initalize count */
+
 	va_start(printList, format); /* intializing printList with last fixed argument being format */
 
 	/*s = va_arg(printList, char *);*/
+	
 
-
-	while (format) && (format[i]) /* if format and format[i] are valid */
+	while (format && format[i]) /* if format and format[i] are valid */
 	{	
 		/*if (format[i] == '%' && format[i+1] != NULL )  % operand found and format[i+1] is not NULL*/
 		/*{ */ 	
@@ -34,16 +37,18 @@ int _printf(const char *format, ...)
 			/*if (format[i] == 'c' || format[i] == 's')  if 'c' or 's' found in format[i] */
 			switch (format[i])
 			{	case ('%'):	/* % operand detected */
-						i++; /* increment i counter to read next array in format */				
-				
+						i++; /* increment i counter to read next array in format */
+						break;				
+						
 				case ('c'): 	/* single char detected */
-						_putchar(va_arg(PrintList, char)); /* obtained the argument value */
+						s[0] = va_arg(printList, int);
+						_putchar(s[0]); /* obtained the argument value */
 						/*_putchar('\n');*/
 						count++;
 						break;
 
 				case ('s'):	/* string is detected */
-						s = va_arg(PrintList, char *); /* obtained argument value */
+						s = va_arg(printList, char *); /* obtained argument value */
 						if (!s)
 							s = "(nil)";
 						/*printf("%s", strrr);*/
@@ -61,10 +66,10 @@ int _printf(const char *format, ...)
 
 			} /* end swutch case */
 			
-		
+			i++;	
 	} /* end while */
 
-	va_end(PrintList); /* end va variable PrintList */
+	va_end(printList); /* end va variable PrintList */
 	return count; /* return count value */
 } /*end _printf */
 
