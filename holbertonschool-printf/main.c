@@ -13,6 +13,7 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
+     long int l;
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -40,4 +41,54 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
-    return (0);
+    _printf(NULL);
+    printf(NULL);
+    _printf("%\n");
+    printf("%\n");
+    _printf("%d\n", INT_MAX);
+    printf("%d\n", INT_MAX);
+    _printf("%d\n", INT_MIN + 1);
+    printf("%d\n", INT_MIN + 1);
+    
+    _printf("%d\n", INT_MIN );
+    printf("%d\n", INT_MIN );
+
+	_printf("There is %d bytes in %d KB Test No. %d\n", 1024, 1, 88);
+	printf("There is %d bytes in %d KB Test No. %d\n", 1024, 1, 88);
+	
+	  _printf("There is %d bytes in %s KB\n", 1024, "Hello");
+        printf("There is %d bytes in %s KB\n", 1024, "Hello");
+	
+    _printf("%c\n", 'S');
+    printf("%c\n", 'S');
+	
+	len = _printf("%d ", 1024);	
+    	printf("Length : %d\n", len);
+
+	len2 =  printf("%d ", 1024);
+	 printf("Length : %d\n", len2);
+    
+	 
+        len = _printf("%d ", -1024);
+        printf("Length : %d\n", len);
+
+        len2 =  printf("%d ", -1024);
+         printf("Length : %d\n", len2);
+	
+	  len = _printf("%d ", INT_MAX);
+        printf("Length : %d\n", len);
+
+        len2 =  printf("%d ", INT_MAX);
+         printf("Length : %d\n", len2);
+
+	 /*printf(" INT_MAX / 2 is %d", INT_MAX / 2); */
+	 
+	 l = -2147482625;
+
+	 len = _printf("%d ", l);
+	 printf("Length : %d\n", len);
+	 len2 = printf("%d ", l);
+         printf("Length : %d\n", len2);
+	 
+	 return (0);
+}
