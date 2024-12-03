@@ -28,7 +28,10 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	length = strlen(string);
+	length = 0;
+
+	while (str)
+		length = length + 1;
 
 	newNode->str = string;
 	newNode->len = length;
