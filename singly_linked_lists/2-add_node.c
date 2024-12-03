@@ -23,8 +23,10 @@ list_t *add_node(list_t **head, const char *str)
 	if (str != NULL)
 		string = strdup(str);
 	else
+	{
 		free(newNode);
 		return (NULL);
+	}
 
 	length = strlen(string);
 
