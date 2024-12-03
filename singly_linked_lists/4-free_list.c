@@ -10,7 +10,6 @@
 void free_list(list_t *head)
 {
 	list_t *nodeToFree;
-	list_t *tempNode;
 
 	if (head == NULL)
 		return;
@@ -18,7 +17,7 @@ void free_list(list_t *head)
 	nodeToFree = head;
 	while (nodeToFree != NULL)
 	{
-		tempNode = nodeToFree->next;
+		head = nodeToFree->next;
 		free(nodeToFree);
 	}
 }
