@@ -35,16 +35,19 @@ list_t *add_node_end(list_t **head, const char *str)
 	length = 0;
 	while (str[length] != '\0')
 		length = length + 1;
+	
 	newNode->len = length;
+	newNode->next = NULL;
 
-	if (head == NULL)
-		return (newNode);
-
-	currentNode = *head;
-	while (currentNode->next != NULL)
-		currentNode = currentNode->next;
-
-	currentNode->next = newNode;
+	if (*head == NULL)
+		*head = newNode;
+	else
+	{
+		currentNode = *head;
+		while (currentNode->next != NULL)
+			currentNode = currentNode->next;
+		currentNode->next = newNode;
+	}
 
 	return (newNode);
 }
