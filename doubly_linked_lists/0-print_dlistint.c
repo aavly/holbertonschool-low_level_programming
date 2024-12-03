@@ -17,7 +17,11 @@ size_t print_dlistint(const dlistint_t *h)
 
 	while (traversingNode != NULL)
 	{
-		printf("%d", traversingNode->n);
+		if (nodeCount == 0)
+			printf("%d\n", h->n);
+		else
+			printf("%d\n", traversingNode->n);
+
 		nodeCount = nodeCount + 1;
 		traversingNode = traversingNode->next;
 	}
