@@ -8,38 +8,44 @@
  * Return: 1 if successful, -1 if fails
  */
 
-int delete_dnodeint_at_idnex(dlistint_t **head,
-		unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *current;
-	unsigned int indexCount;
+	unsigned int count = 0;
+	dlistint_t *temp = NULL, *delete = NULL;
 
-	current = *head;
-
-	if (!head || !*head)
+	if (!head || !(*head))
 		return (-1);
-
-	if (index == 0)
+	temp = *head;
+	while (temp != NULL)
 	{
-		*head = current->next;
-		if (*head)
-			(*head)->prev = NULL;
-		free(current);
-		return (1);
+		if (count != index)
+			temp = temp->next, count++;
+		else
+		{
+			if (index == 0 && (*head)->next == NULL)
+				*head = NULL, free(temp);
+			else if (index == 0 && (*head)->next != NULL)
+			{
+				delete = *head, *head = (*head)->next;
+				delete->next = NULL, (*head)->prev = NULL;
+				free(delete);
+			}
+			else if (temp->next == NULL)
+			{
+				delete = temp, temp = temp->prev;
+				delete->prev = NULL;
+				temp->next = NULL;
+				free(delete);
+			}
+			else
+			{
+				delete = temp, temp = temp->prev;
+				temp->next = temp->next->next;
+				temp->next->prev = temp;
+				delete->prev = NULL, delete->next = NULL, free(delete);
+			}
+			return (1);
+		}
 	}
-
-	while (current && indexCount < index)
-	{
-		current = current->next;
-		indexCount = indexCount + 1;
-	}
-
-	if (current->prev)
-		current->prev->next = current->next;
-	if (current->next)
-		current->next->prev = current->prev;
-
-	free(current);
-	return (1);
-
+	return (-1);
 }
