@@ -14,7 +14,7 @@ void splitString(char *str)
 
 int main ()
 {
-	char str[] = "Just a placeholder for now";
+	char str[] = "See how this string is split up";
 	
 	splitString(str);
 
