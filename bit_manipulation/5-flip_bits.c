@@ -18,11 +18,10 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	xorResult = n ^ m;
 	count = 0;
 
-	while (xorResult > 0)
+	while (xorResult != 0)
 	{
-		if (xorResult % 2 == 1)
-			count = count + 1;
-		xorResult = xorResult / 2;
+		count += xorResult & 1;
+		xorResult >>= 1;
 	}
 
 	return (count);
